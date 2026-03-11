@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 37 27% 93%;
+    --foreground: 24 5% 18%;
+
+    --card: 37 27% 93%;
+    --card-foreground: 24 5% 18%;
+
+    --popover: 37 27% 93%;
+    --popover-foreground: 24 5% 18%;
+
+    --primary: 33 38% 54%;
+    --primary-foreground: 37 27% 93%;
+
+    --secondary: 37 20% 85%;
+    --secondary-foreground: 24 5% 18%;
+
+    --muted: 37 20% 85%;
+    --muted-foreground: 24 5% 35%;
+
+    --accent: 0 42% 39%;
+    --accent-foreground: 37 27% 93%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 33 20% 80%;
+    --input: 33 20% 80%;
+    --ring: 33 38% 54%;
+
+    --radius: 0.25rem;
+
+    --sidebar-background: 37 27% 93%;
+    --sidebar-foreground: 24 5% 18%;
+    --sidebar-primary: 33 38% 54%;
+    --sidebar-primary-foreground: 37 27% 93%;
+    --sidebar-accent: 37 20% 85%;
+    --sidebar-accent-foreground: 24 5% 18%;
+    --sidebar-border: 33 20% 80%;
+    --sidebar-ring: 33 38% 54%;
+
+    --font-display: 'Playfair Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+}
+
+@layer components {
+  .text-display {
+    font-family: var(--font-display);
+  }
+
+  .text-body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer utilities {
+  .animate-fade-up {
+    animation: fadeUp 0.8s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-slow {
+    animation: fadeInSlow 1.5s ease-out forwards;
+    opacity: 0;
+  }
+
+  .animate-fade-in-delayed {
+    animation: fadeInSlow 1.5s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+
+  .animate-counter-digit {
+    animation: fadeUp 0.4s ease-out forwards;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInSlow {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
